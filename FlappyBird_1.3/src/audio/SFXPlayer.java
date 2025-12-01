@@ -1,19 +1,21 @@
 package audio;
 
-import java.io.File;
+import java.io.InputStream;
 import javax.sound.sampled.*;
 
 public class SFXPlayer {
 
-    public static void play(String soundPath) {
+    public static void play(String soundFile) {
         try {
-            AudioInputStream audioInput = AudioSystem.getAudioInputStream(new File(soundPath));
+            InputStream audioSrc = SFXPlayer.class.getResourceAsStream("/sound/" + soundFile);
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioSrc);
             Clip clip = AudioSystem.getClip();
-            clip.open(audioInput);
+            clip.open(audioStream);
             clip.start();
         } catch (Exception e) {
             System.out.println("SFX error: " + e.getMessage());
         }
     }
 }
+
 

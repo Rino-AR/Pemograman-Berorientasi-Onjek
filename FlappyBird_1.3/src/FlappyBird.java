@@ -158,18 +158,18 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
             if (!p.passed && bird.x > p.x + p.width) {
                 score += 0.5; //each pair of pipes gives 1 point, there,s two pipes (top and bottom)
                 p.passed = true;
-                SFXPlayer.play("C:\\Users\\rinoa\\OneDrive\\Desktop\\FlappyBird\\src\\sfx_point.wav");
+                SFXPlayer.play("sfx_point.wav");
             }
 
             //check for collision
             if (collision(bird, p)) {
-                SFXPlayer.play("C:\\Users\\rinoa\\OneDrive\\Desktop\\FlappyBird\\src\\sfx_hit.wav");
+                SFXPlayer.play("sfx_die.wav");
                 gameOver = true;
             }
         }
 
         if (bird.y > boardHeight) {
-            SFXPlayer.play("C:\\Users\\rinoa\\OneDrive\\Desktop\\FlappyBird\\src\\sfx_die.wav");
+            SFXPlayer.play("sfx_die.wav");
             gameOver = true;
         }
     }
@@ -206,7 +206,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
 
             // BIRD JUMP
             velocityY = -9; //flap upwards
-            SFXPlayer.play("C:\\Users\\rinoa\\OneDrive\\Desktop\\FlappyBird\\src\\sfx_wing.wav");
+            SFXPlayer.play("sfx_wing.wav");
 
             //restart game
             if (gameOver) {
