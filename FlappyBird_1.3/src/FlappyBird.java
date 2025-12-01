@@ -163,7 +163,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
 
             //check for collision
             if (collision(bird, p)) {
-                SFXPlayer.play("sfx_die.wav");
+                SFXPlayer.play("sfx_hit.wav");
                 gameOver = true;
             }
         }
